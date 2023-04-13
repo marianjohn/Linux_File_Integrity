@@ -1,0 +1,14 @@
+#To create hash of a particular file
+md5sum image.png
+sha256sum image.png
+
+#To creat some sample files (test files)
+openssl rand 128 > out1.bin
+.bin is a binary file so use a binary editor and not text editor like vim
+
+#To store the hashes of the file onto a log file
+md5sum out1.bin >> hashes.log
+> - used for one data entry and >> - used for multiple data entry
+
+#To check the integrity of all the contents in the log file
+md5sum -c hashes.log
